@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import KanbanBoard from './components/KanbanBoard';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [tickets, setTickets] = useState([]);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchTickets = async () => {
+      try {
+        const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment');
+        const data = await response.json();
+        if (Array.isArray(data.tickets)) {
+          setTickets(data.tickets);
+          setUsers(data.users)
+        } else {
+          console.error('Expected an array, but got:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching tickets:', error);
+      }
+    };
+
+    fetchTickets();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>Kanban Board</h1> */}
+      <KanbanBoard tickets={tickets} users={users} />
     </div>
   );
-}
+};
 
 export default App;

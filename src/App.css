@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+body{
+  font-family: "Inter", sans-serif;
+  background-color: #e4f7ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dropdown {
+  position: relative;
+  border: 0.5px black;
+  display: inline-block;
+  border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dropdown-toggle {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.icon{
+  margin: 0px 4px;
+}
+
+.dropdown-toggle i {
+  margin-right: 5px; 
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  width: 200px;
+  color: #838383;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.dropdown-item label {
+  margin-right: 10px;
+}
+
+.kanban-board {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-by-selector {
+  margin-bottom: 20px;
+}
+
+.tickets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kanban-board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9; 
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grouped-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+  width: 100%;
+}
+
+.group {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.group-title {
+  display: flex; 
+  flex-direction: row;
+  align-items: center; 
+}
+
+.tickets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+
+.grouphead{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

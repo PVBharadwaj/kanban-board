@@ -1,0 +1,82 @@
+
+  
+  .card h3 {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+  
+  .priority-4 {
+    background-color: #f8d7da;
+  }
+  
+  .priority-3 {
+    background-color: #fff3cd;
+  }
+  
+  .priority-2 {
+    background-color: #d1ecf1;
+  }
+  
+  .priority-1 {
+    background-color: #d4edda;
+  }
+  
+  .priority-0 {
+    background-color: #e2e3e5;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    position: relative; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    transition: transform 0.3s;
+    font-size: 12px;
+  }
+
+  .cardp{
+    margin: 2px;
+  }
+  
+  .card-title {
+    font-size: 16px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    flex-grow: 1;
+  }
+  
+  .card.user {
+    background-color: #f0f8ff;
+  }
+  
+  
+  .ticket-card {
+    background-color: #f9f9f9;
+  }
+  
+  .user-card {
+    background-color: #e0f7fa;
+  }
+  
+  .ticket-card h3 {
+    color: #333;
+  }
+  
+  .user-card h3 {
+    color: #00796b; 
+  }
+  
